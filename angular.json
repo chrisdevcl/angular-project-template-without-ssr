@@ -7,7 +7,23 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush"
+        },
+        "@schematics/angular:directive": {
+          "path": "src/app/shared/directives"
+        },
+        "@schematics/angular:pipe": {
+          "path": "src/app/shared/pipes"
+        },
+        "@schematics/angular:guard": {
+          "path": "src/app/infrastructure/routing/guards"
+        },
+        "@schematics/angular:resolver": {
+          "path": "src/app/infrastructure/routing/resolvers"
+        },
+        "@schematics/angular:interceptor": {
+          "path": "src/app/infrastructure/http/interceptors"
         }
       },
       "root": "",

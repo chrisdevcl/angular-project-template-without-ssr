@@ -16,7 +16,29 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022"
+    "module": "ES2022",
+    "baseUrl": "src",
+    "paths": {
+      "@app/core/*": ["app/core/*"],
+      "@app/core/services/*": ["app/core/services/*"],
+      "@app/core/models/*": ["app/core/models/*"],
+      "@app/core/constants/*": ["app/core/constants/*"],
+      "@app/core/utils/*": ["app/core/utils/*"],
+      "@app/infrastructure/*": ["app/infrastructure/*"],
+      "@app/infrastructure/http/*": ["app/infrastructure/http/*"],
+      "@app/infrastructure/http/services/*": ["app/infrastructure/http/services/*"],
+      "@app/infrastructure/http/interceptors/*": ["app/infrastructure/http/interceptors/*"],
+      "@app/infrastructure/http/adapters/*": ["app/infrastructure/http/adapters/*"],
+      "@app/infrastructure/routing/*": ["app/infrastructure/routing/*"],
+      "@app/infrastructure/routing/guards/*": ["app/infrastructure/routing/guards/*"],
+      "@app/infrastructure/routing/resolvers/*": ["app/infrastructure/routing/resolvers/*"],
+      "@app/shared/*": ["app/shared/*"],
+      "@app/shared/components/*": ["app/shared/components/*"],
+      "@app/shared/directives/*": ["app/shared/directives/*"],
+      "@app/shared/pipes/*": ["app/shared/pipes/*"],
+      "@app/shared/utilities/*": ["app/shared/utilities/*"],
+      "@app/pages/*": ["app/pages/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
