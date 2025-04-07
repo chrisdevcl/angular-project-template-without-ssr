@@ -1,59 +1,48 @@
-# AngularProjectTemplateWithoutSsr
+# 🧱 Angular Base Template
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+Plantilla base para proyectos Angular con enfoque en buenas prácticas, escalabilidad y mantenibilidad.  
+Ideal para proyectos medianos o grandes, siguiendo una estructura cercana a la arquitectura hexagonal.
 
-## Development server
+Este template está pensado para ayudarte a iniciar proyectos Angular de forma rápida, con una organización sólida desde el primer commit.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Tecnologías utilizadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- [Angular](https://angular.io/) **v19.1.7**
+- [Node.js](https://nodejs.org/) **v20.18.1**
+- [ESLint](https://eslint.org/) – Linting para mantener la calidad del código
+- [Prettier](https://prettier.io/) – Formateo automático del código
+- [Normalize.css](https://necolas.github.io/normalize.css/) – Consistencia visual entre navegadores
+- Arquitectura inspirada en **Hexagonal / DDD** (Separación clara de dominio, infraestructura y presentación)
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📁 Estructura del proyecto
 
 ```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+src/
+└── app/
+    ├── core/                      # Lógica de dominio y utilidades globales
+    │   ├── constants/             # Constantes globales
+    │   ├── models/                # Modelos de datos
+    │   ├── services/              # Servicios puros (sin dependencia externa)
+    │   └── utils/                 # Funciones auxiliares puras
+    │
+    ├── infrastructure/           # Implementaciones específicas del sistema
+    │   ├── http/
+    │   │   ├── services/          # Servicios que interactúan con APIs externas
+    │   │   ├── interceptors/      # Interceptores HTTP globales
+    │   │   └── adapters/          # Adaptadores entre infraestructura y dominio
+    │   └── routing/
+    │       ├── guards/           # Guards de rutas protegidas
+    │       └── resolvers/        # Carga previa de datos para rutas
+    │
+    ├── shared/                   # Reutilizables en toda la app
+    │   ├── components/            # Componentes UI compartidos
+    │   ├── directives/            # Directivas personalizadas
+    │   ├── pipes/                 # Pipes reutilizables
+    │   ├── styles/                # Estilos globales / normalización
+    │   └── utilities/             # Funciones auxiliares generales
+    │
+    └── pages/                    # Módulos de funcionalidades o vistas
